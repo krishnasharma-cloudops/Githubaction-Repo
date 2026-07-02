@@ -23,10 +23,10 @@ jobs:
       - name: Azure Login
         uses: azure/login@v2
         with:
-          client-id: ${{ 2e01ea6c-fb1f-429b-8c06-30ccff14fded }}
-          tenant-id: ${{ 2a12578d-9130-4f98-9fe6-c8a422505a24 }}
-          subscription-id: ${{ 2b0a7e07-53fd-47f9-85cf-6fbc0364e35f }}
-          client-secret: ${{ fhH8Q~1lLm5.voO~0.czvweDVTnPnLfII8vzgdc1 }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
 
       # ✅ Terraform Init
       - name: Terraform Init
@@ -34,7 +34,7 @@ jobs:
 
       # ✅ Format Check
       - name: Terraform Format Check
-        run: terraform fmt
+        run: terraform fmt -check
 
       # ✅ Validate
       - name: Terraform Validate
