@@ -7,9 +7,7 @@ terraform {
 }
 
 provider "azurerm" {
-    features {
-      
-    }
+    features {}
   
 }
 
@@ -17,7 +15,7 @@ provider "azurerm" {
 
 
 resource "azurerm_resource_group" "gitrgs" {
-    name = "githuttest"
+    name = "githubtest"
     location = "centralindia"
   
 }
